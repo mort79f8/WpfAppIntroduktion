@@ -26,5 +26,10 @@ namespace WpfAppIntroduktion
         {
             InitializeComponent();
         }
+
+        private void buttonOpg12_Click(object sender, RoutedEventArgs e)
+        {
+            classBIZ.Number4711(listBoxRes);
+        }
     }
 }
