@@ -21,5 +21,14 @@ namespace WpfApp1.BIZ
                 listBox.Items.Add(i.ToString());
             }
         }
+
+        public void RandomNumbers(ListBox listBox)
+        {
+            Random random = new Random();
+            for (int i = 0; i < 25; i++)
+            {
+                listBox.Items.Add(random.Next(100_000,1_000_001).ToString());
+            }
+        }
     }
 }
