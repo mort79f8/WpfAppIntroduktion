@@ -88,6 +88,26 @@ namespace WpfApp1.BIZ
             listBox.Items.Add($"Gennemsnitsværdi: {GetAverage(numbers)}");
         }
 
+        public void RandomNumberMinusAverage(ListBox listBox)
+        {
+            List<int> numbers = new List<int>();
+
+            for (int i = 0; i < 25; i++)
+            {
+                numbers.Add(random.Next(100_000, 1_000_001));
+            }
+            
+            numbers.Sort();
+
+            int average = GetAverage(numbers);
+
+            foreach (int number in numbers)
+            {
+                listBox.Items.Add($"{number} - {average} = {number - average}");
+            }
+
+        }
+
         private int GetAverage(List<int> listOfnumbers)
         {
             int number = 0;
