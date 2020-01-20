@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace WpfApp1.BIZ
 {
@@ -131,6 +132,27 @@ namespace WpfApp1.BIZ
             return returnList;
         }
 
+        public void ColoredRandomNumbersMinusAverage(ListBox listBox)
+        {
+            List<int> numbers = new List<int>();
+            
+
+            for (int i = 0; i < 25; i++)
+            {
+                numbers.Add(random.Next(100_000, 1_000_001));
+            }
+
+            int average = GetAverage(numbers);
+
+            foreach (int number in numbers)
+            {
+                ListBoxItem listBoxItem = new ListBoxItem();
+                SetBackgroundColor(listBoxItem, number);
+                listBoxItem.Content = $"{number} - {average} = {number - average}";
+                listBox.Items.Add(listBoxItem);
+            }
+        }
+
         public void CheckItemSource(ListBox listBox)
         {
             if (listBox.ItemsSource == null)
@@ -157,6 +179,31 @@ namespace WpfApp1.BIZ
             number = number / listOfnumbers.Count();
             
             return number;
+        }
+
+        private bool IsNumberEven(int number)
+        {
+            int modulus = number % 2;
+            if (modulus == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void SetBackgroundColor(ListBoxItem listBoxItem, int number)
+        {
+            if (IsNumberEven(number))
+            {
+                listBoxItem.Background = Brushes.HotPink;
+            }
+            else
+            {
+                listBoxItem.Background = Brushes.AliceBlue;
+            }
         }
     }
 }

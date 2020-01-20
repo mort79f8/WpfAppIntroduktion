@@ -96,7 +96,8 @@
                 Margin="10"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                Content="Opgave 1.9" />
+                Content="Opgave 1.9"
+                Click="buttonOpg19_Click" />
 
         <Button x:Name="buttonOpg110"
                 Grid.Column="0"

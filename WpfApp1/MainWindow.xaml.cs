@@ -68,5 +68,11 @@ namespace WpfAppIntroduktion
             classBIZ.CheckItemSource(listBoxRes);
             listBoxRes.ItemsSource = classBIZ.RandomNumbersMinusAverage();
         }
+
+        private void buttonOpg19_Click(object sender, RoutedEventArgs e)
+        {
+            classBIZ.CheckItemSource(listBoxRes);
+            classBIZ.ColoredRandomNumbersMinusAverage(listBoxRes);
+        }
     }
 }
