@@ -105,7 +105,8 @@
                 Margin="10"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                Content="Opgave 1.10" />
+                Content="Opgave 1.10"
+                Click="buttonOpg110_Click" />
         <!--#endregion-->
 
         <ListBox x:Name="listBoxRes"

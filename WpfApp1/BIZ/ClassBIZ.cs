@@ -153,6 +153,38 @@ namespace WpfApp1.BIZ
             }
         }
 
+        public List<ListBoxItem> ColoredSortedRandomNumbersMinusAverage()
+        {
+            List<int> numbers = new List<int>();
+            List<ListBoxItem> returnList = new List<ListBoxItem>();
+
+
+            for (int i = 0; i < 25; i++)
+            {
+                numbers.Add(random.Next(100_000, 1_000_001));
+            }
+
+            numbers.Sort();
+
+            int average = GetAverage(numbers);
+
+            foreach (int number in numbers)
+            {
+                ListBoxItem listBoxItem = new ListBoxItem();
+                SetBackgroundColor(listBoxItem, number);
+                listBoxItem.Content = $"{number} - {average} = {number - average}";
+                returnList.Add(listBoxItem);
+            }
+
+            return returnList;
+        }
+
+        public void SetupAssignmentOneTen(ListBox listBox)
+        {
+            listBox.ItemsSource = ColoredSortedRandomNumbersMinusAverage();
+        }
+
+        #region utilsMethods
         public void CheckItemSource(ListBox listBox)
         {
             if (listBox.ItemsSource == null)
@@ -205,5 +237,7 @@ namespace WpfApp1.BIZ
                 listBoxItem.Background = Brushes.AliceBlue;
             }
         }
+
+        #endregion
     }
 }
