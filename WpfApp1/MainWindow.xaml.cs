@@ -50,5 +50,11 @@ namespace WpfAppIntroduktion
             listBoxRes.Items.Clear();
             classBIZ.ListUnsortedAndSorted(listBoxRes);
         }
+
+        private void buttonOpg16_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxRes.Items.Clear();
+            classBIZ.RandomNumbersAndAverage(listBoxRes);
+        }
     }
 }

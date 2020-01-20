@@ -46,7 +46,7 @@ namespace WpfApp1.BIZ
 
             foreach (int number in numbers)
             {
-                listBox.Items.Add(number).ToString();
+                listBox.Items.Add(number.ToString());
             }
         }
 
@@ -68,6 +68,38 @@ namespace WpfApp1.BIZ
             {
                 listBox.Items.Add($"{list1[i].ToString()} - {list2[i].ToString()}");
             }
+        }
+
+        public void RandomNumbersAndAverage(ListBox listBox)
+        {
+            List<int> numbers = new List<int>();
+
+            for (int i = 0; i < 25; i++)
+            {
+                numbers.Add(random.Next(100_000, 1_000_001));
+            }
+
+            foreach (int number in numbers)
+            {
+                listBox.Items.Add(number.ToString());
+            }
+
+            listBox.Items.Add(" ");
+            listBox.Items.Add($"Gennemsnitsværdi: {GetAverage(numbers)}");
+        }
+
+        private int GetAverage(List<int> listOfnumbers)
+        {
+            int number = 0;
+
+            foreach (int num in listOfnumbers)
+            {
+                number = +num; 
+            }
+
+            number = number / listOfnumbers.Count();
+            
+            return number;
         }
     }
 }
