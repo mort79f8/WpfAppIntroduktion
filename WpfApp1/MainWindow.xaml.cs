@@ -28,39 +28,45 @@ namespace WpfAppIntroduktion
         }
 
         private void buttonOpg12_Click(object sender, RoutedEventArgs e)
-        {
-            listBoxRes.Items.Clear();
+        {           
+            classBIZ.CheckItemSource(listBoxRes);
             classBIZ.Number4711(listBoxRes);
         }
 
         private void buttonOpg13_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            classBIZ.CheckItemSource(listBoxRes);
             classBIZ.RandomNumbers(listBoxRes);
         }
 
         private void buttonOpg14_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            classBIZ.CheckItemSource(listBoxRes);
             classBIZ.RandomSortedNumbers(listBoxRes);
         }
 
         private void buttonOpg15_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            classBIZ.CheckItemSource(listBoxRes);
             classBIZ.ListUnsortedAndSorted(listBoxRes);
         }
 
         private void buttonOpg16_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            classBIZ.CheckItemSource(listBoxRes);
             classBIZ.RandomNumbersAndAverage(listBoxRes);
         }
 
         private void buttonOpg17_Click(object sender, RoutedEventArgs e)
         {
-            listBoxRes.Items.Clear();
+            classBIZ.CheckItemSource(listBoxRes);
             classBIZ.RandomNumberMinusAverage(listBoxRes);
+        }
+
+        private void buttonOpg18_Click(object sender, RoutedEventArgs e)
+        {
+            classBIZ.CheckItemSource(listBoxRes);
+            listBoxRes.ItemsSource = classBIZ.RandomNumbersMinusAverage();
         }
     }
 }

@@ -108,6 +108,43 @@ namespace WpfApp1.BIZ
 
         }
 
+        public List<string> RandomNumbersMinusAverage()
+        {
+            List<int> numbers = new List<int>();
+            List<string> returnList = new List<string>();
+
+
+            for (int i = 0; i < 25; i++)
+            {
+                numbers.Add(random.Next(100_000, 1_000_001));
+            }
+
+            numbers.Sort();
+
+            int average = GetAverage(numbers);
+
+            foreach (int number in numbers)
+            {
+                returnList.Add($"{number} - {average} = {number - average}");
+            }
+
+            return returnList;
+        }
+
+        public void CheckItemSource(ListBox listBox)
+        {
+            if (listBox.ItemsSource == null)
+            {
+                listBox.Items.Clear();
+                return;
+            }
+            else
+            {
+                listBox.ItemsSource = null;
+                listBox.Items.Clear();
+            }
+        }
+
         private int GetAverage(List<int> listOfnumbers)
         {
             int number = 0;
