@@ -39,7 +39,7 @@ namespace WpfApp1.BIZ
 
             for (int i = 0; i < 25; i++)
             {
-                numbers.Add(random.Next(100_000, 1_000_000));
+                numbers.Add(random.Next(100_000, 1_000_001));
             }
 
             numbers.Sort();
@@ -47,6 +47,26 @@ namespace WpfApp1.BIZ
             foreach (int number in numbers)
             {
                 listBox.Items.Add(number).ToString();
+            }
+        }
+
+        public void ListUnsortedAndSorted(ListBox listBox)
+        {
+            List<int> list1 = new List<int>();
+            List<int> list2 = new List<int>();
+
+            for (int i = 0; i < 25; i++)
+            {
+                int number = random.Next(100_000, 1_000_001);
+                list1.Add(number);
+                list2.Add(number);
+            }
+
+            list2.Sort();
+
+            for (int i = 0; i < list1.Count; i++)
+            {
+                listBox.Items.Add($"{list1[i].ToString()} - {list2[i].ToString()}");
             }
         }
     }

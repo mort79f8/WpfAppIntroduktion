@@ -44,5 +44,11 @@ namespace WpfAppIntroduktion
             listBoxRes.Items.Clear();
             classBIZ.RandomSortedNumbers(listBoxRes);
         }
+
+        private void buttonOpg15_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxRes.Items.Clear();
+            classBIZ.ListUnsortedAndSorted(listBoxRes);
+        }
     }
 }
