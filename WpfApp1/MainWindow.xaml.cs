@@ -29,12 +29,20 @@ namespace WpfAppIntroduktion
 
         private void buttonOpg12_Click(object sender, RoutedEventArgs e)
         {
+            listBoxRes.Items.Clear();
             classBIZ.Number4711(listBoxRes);
         }
 
         private void buttonOpg13_Click(object sender, RoutedEventArgs e)
         {
+            listBoxRes.Items.Clear();
             classBIZ.RandomNumbers(listBoxRes);
+        }
+
+        private void buttonOpg14_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxRes.Items.Clear();
+            classBIZ.RandomSortedNumbers(listBoxRes);
         }
     }
 }

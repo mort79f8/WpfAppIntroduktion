@@ -9,6 +9,8 @@ namespace WpfApp1.BIZ
 {
     class ClassBIZ
     {
+        Random random = new Random();
+
         public ClassBIZ()
         {
 
@@ -24,10 +26,27 @@ namespace WpfApp1.BIZ
 
         public void RandomNumbers(ListBox listBox)
         {
-            Random random = new Random();
+            
             for (int i = 0; i < 25; i++)
             {
                 listBox.Items.Add(random.Next(100_000,1_000_001).ToString());
+            }
+        }
+
+        public void RandomSortedNumbers(ListBox listBox)
+        {
+            List<int> numbers = new List<int>();
+
+            for (int i = 0; i < 25; i++)
+            {
+                numbers.Add(random.Next(100_000, 1_000_000));
+            }
+
+            numbers.Sort();
+
+            foreach (int number in numbers)
+            {
+                listBox.Items.Add(number).ToString();
             }
         }
     }
